@@ -92,7 +92,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
             </motion.button>
 
             <motion.a
-              href="https://drive.google.com/file/d/1TYexdJWOGeE76WNHoPqrjamPoGTYuvni/view?usp=sharing"
+              href="https://drive.google.com/file/d/1KhfdMZ7B-tE-izdWCMlTkYHaO4E2VRvM/view?usp=sharing"
               download
               className="btn btn-primary"
               initial={{ opacity: 0, scale: 0 }}
