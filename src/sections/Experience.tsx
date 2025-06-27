@@ -22,7 +22,7 @@ const Experience: React.FC = () => {
       company: 'Terrace Tech Labs',
       period: 'Dec 2023 - Feb 2024',
       description: 'Developed UI/UX designs and implemented web solutions using HTML, CSS, and JavaScript. Collaborated with the development team on client projects.',
-      logo: 'https://gcdnb.pbrd.co/images/pLgmnmJDL23s.png?o=1',
+      logo: 'https://i.ibb.co/WvbDMfWd/icon.png',
     },
     {
       role: 'General Secretary',
