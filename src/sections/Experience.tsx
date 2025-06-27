@@ -43,7 +43,7 @@ const Experience: React.FC = () => {
       company: 'E-Cell, St. Joseph\'s University',
       period: 'Sep 2023 - March 2024',
       description: 'Designed posters, brochures, and marketing materials for various events. Led a team of designers to create cohesive visual identities.',
-      logo: 'https://gcdnb.pbrd.co/images/YwBFp3QHTZmk.jpg?o=1',
+      logo: 'https://i.ibb.co/hRb4mNpD/Whats-App-Image-2025-02-27-at-02-37-57-826ac755.jpg',
     },
     {
       role: 'Head of Operations',
