@@ -15,7 +15,7 @@ const Experience: React.FC = () => {
       company: 'Arkade Media',
       period: 'Nov 2023 - Dec 24',
       description: 'Leading branding & promotional material creation. Designing social media content and marketing strategies for clients.',
-      logo: 'https://gcdnb.pbrd.co/images/awQB5NJ8kOiA.png?o=1',
+      logo: 'https://i.ibb.co/0p76YJQP/aaa.png',
     },
     {
       role: 'Software Intern',
