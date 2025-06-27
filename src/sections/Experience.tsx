@@ -57,7 +57,7 @@ const Experience: React.FC = () => {
       company: 'Cybernetics Association',
       period: 'Sep 2023 - April 2024',
       description: 'Managed events and logistics for tech-related activities. Coordinated with various departments to ensure smooth execution of programs.',
-      logo: 'https://gcdnb.pbrd.co/images/7rZnXjck8goo.png?o=1',
+      logo: 'https://i.ibb.co/fY5pGTZ9/FINALFINALFINALt.png',
     },
   ];
 
