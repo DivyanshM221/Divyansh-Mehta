@@ -11,9 +11,16 @@ const Experience: React.FC = () => {
 
   const experiences = [
     {
+      role: 'UI-UX Designer',
+      company: 'Spectrum Infotech & Securities',
+      period: 'Dec 2023 – Feb 2024',
+      description: 'Designed and launched spectruminfotechs.in, improving user flow and readability',
+      logo: 'https://i.ibb.co/CKjW6rmn/Spectrum-Instagram-Post.png',
+    },
+    {
       role: 'Co-Founder',
       company: 'Arkade Media',
-      period: 'Nov 2023 - Dec 24',
+      period: 'Nov 2023 - Dec 2024',
       description: 'Leading branding & promotional material creation. Designing social media content and marketing strategies for clients.',
       logo: 'https://i.ibb.co/0p76YJQP/aaa.png',
     },
