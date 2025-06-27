@@ -134,7 +134,7 @@ const Hero: React.FC = () => {
               {/* Profile Photo Container */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-lg overflow-hidden border-4 border-white dark:border-dark-light shadow-2xl group-hover:shadow-3xl transition-all duration-300 transform group-hover:scale-105">
                 <img
-                  src="https://gcdnb.pbrd.co/images/hR8YKvHd9oKa.jpg?o=1"
+                  src="https://i.ibb.co/Swmx8cWn/Whats-App-Image-2025-06-10-at-18-42-22-11e22edd.jpg"
                   alt="Divyansh Mehta"
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
                 />
