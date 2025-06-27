@@ -121,7 +121,7 @@ const About: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
               >
                 <img
-                  src="https://gcdnb.pbrd.co/images/6ZoXxcIuRRnu.jpg?o=1"
+                  src="https://i.ibb.co/Gv3Dg6bP/Whats-App-Image-2025-02-27-at-02-58-15-5e4e1d03.jpg"
                   alt="Divyansh working"
                   className="w-full h-auto"
                 />
