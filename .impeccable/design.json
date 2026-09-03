@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-26T00:00:00Z",
+  "title": "Design System: The Living Spec",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#F5F5F1", "tonalRamp": ["#1C1B18","#332F28","#4D4740","#6B6459","#928A7B","#C4BEAF","#E6E3D8","#F5F5F1"] },
+      "paper-raised": { "role": "neutral", "displayName": "Paper Raised", "canonical": "#FBFBF9", "tonalRamp": ["#1E1E1C","#363634","#504F4B","#6E6D68","#97958D","#C8C6BE","#E9E9E5","#FBFBF9"] },
+      "paper-sunken": { "role": "neutral", "displayName": "Paper Sunken", "canonical": "#ECEBE4", "tonalRamp": ["#1B1B17","#31302A","#4A4941","#67655A","#8D8A7C","#BEBBAB","#DEDBCF","#ECEBE4"] },
+      "ink": { "role": "primary", "displayName": "Deep Ink Navy", "canonical": "#14213D", "tonalRamp": ["#0A1020","#121E37","#1A2C50","#223A68","#3A5590","#6B84B0","#A5B6D4","#DCE3F0"] },
+      "ink-soft": { "role": "neutral", "displayName": "Soft Ink", "canonical": "#4A5268", "tonalRamp": ["#14161C","#242832","#363B49","#4A5268","#6A7288","#909AB0","#BEC4D2","#E5E8EF"] },
+      "ink-faint": { "role": "neutral", "displayName": "Faint Ink (text-safe muted)", "canonical": "#5A6578", "tonalRamp": ["#161A20","#282E38","#3B4250","#4E5768","#5A6578","#8890A0","#BCC1CC","#E3E5EA"] },
+      "line": { "role": "neutral", "displayName": "Hairline", "canonical": "#D8D6CC", "tonalRamp": ["#26251F","#403E36","#5C5850","#78746A","#9C978A","#C3BFB1","#D8D6CC","#EFEEE8"] },
+      "line-strong": { "role": "neutral", "displayName": "Hairline Strong", "canonical": "#B7B4A6", "tonalRamp": ["#211F1B","#39362F","#534F44","#6F6B5D","#918C7B","#B7B4A6","#D3D0C4","#EDEBE3"] },
+      "amber": { "role": "secondary", "displayName": "Status Amber (decorative only)", "canonical": "#C98A2C", "tonalRamp": ["#2A1A08","#4A2E0E","#6E4715","#93611D","#B87825","#C98A2C","#E0B36B","#F1D9AF"] },
+      "amber-soft": { "role": "secondary", "displayName": "Amber Soft (pill fill)", "canonical": "#E8D5B0", "tonalRamp": ["#3A2A12","#5C4520","#7E602E","#A17B3E","#C4A164","#E8D5B0","#F1E4CC","#FAF3E6"] },
+      "amber-deep": { "role": "secondary", "displayName": "Amber Deep (text-safe)", "canonical": "#7A4D14", "tonalRamp": ["#1E1206","#33200A","#4C300F","#663F13","#7A4D14","#A6702B","#CC9A55","#E8C48D"] },
+      "teal": { "role": "tertiary", "displayName": "Status Teal (decorative only)", "canonical": "#2F6F5E", "tonalRamp": ["#081F19","#0F332A","#17493C","#20604F","#2F6F5E","#4C9481","#82BDAC","#BEDED2"] },
+      "teal-soft": { "role": "tertiary", "displayName": "Teal Soft (pill fill)", "canonical": "#C9DED7", "tonalRamp": ["#152420","#233F38","#325A50","#437468","#5D9084","#8CB6AB","#C9DED7","#EAF3F0"] },
+      "teal-deep": { "role": "tertiary", "displayName": "Teal Deep (text-safe)", "canonical": "#285F50", "tonalRamp": ["#0A1E18","#12332A","#1B493D","#255F50","#285F50","#3E8171","#6EAB9B","#AAD1C5"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display / H1", "purpose": "One per page, the spec headline in the hero." },
+      "headline": { "displayName": "Headline / H2", "purpose": "Section heads." },
+      "title": { "displayName": "Title / H3", "purpose": "Card and subsection titles." },
+      "body": { "displayName": "Body", "purpose": "Default running text." },
+      "body-lg": { "displayName": "Body Large", "purpose": "Hero sub, section-head paragraphs, prose." },
+      "label": { "displayName": "Mono Label", "purpose": "All metadata: meta-strip, spec-grid labels, pills, tags, version tags, table headers." }
+    },
+    "shadows": [
+      { "name": "preview-card-hover", "value": "0 12px 24px -16px rgba(20,33,61,0.25)", "purpose": "Only shadow in the system; hover-only lift on Home/Work preview cards, never a resting-state property." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default easing for reveal, hover, and transform transitions." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.65, 0, 0.35, 1)", "purpose": "Secondary easing option." },
+      { "name": "dur-fast", "value": "160ms", "purpose": "Micro-interactions: button hover, nav underline, copy-btn." },
+      { "name": "dur-base", "value": "380ms", "purpose": "Card hover lift, nav underline wipe." },
+      { "name": "dur-slow", "value": "700ms", "purpose": "Reveal-on-scroll opacity/transform transition." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "480px" },
+      { "name": "md", "value": "700px" },
+      { "name": "lg", "value": "760px" },
+      { "name": "xl", "value": "900px" },
+      { "name": "xxl", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Highest-priority action per view (hero CTA, Contact CTA).",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">View selected work</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.875rem; padding: 0.75rem 1.5rem; border-radius: 3px; background: #14213D; color: #F5F5F1; border: 1px solid #14213D; text-decoration: none; transition: background 160ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover { background: #223059; } .ds-btn-primary:focus-visible { outline: 2px solid #14213D; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action paired next to a primary button.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Download résumé ↓</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.875rem; padding: 0.75rem 1.5rem; border-radius: 3px; background: transparent; color: #14213D; border: 1px solid #B7B4A6; text-decoration: none; transition: border-color 160ms, background 160ms; } .ds-btn-ghost:hover { border-color: #14213D; background: #FBFBF9; } .ds-btn-ghost:focus-visible { outline: 2px solid #14213D; outline-offset: 3px; }"
+    },
+    {
+      "name": "Status Pill",
+      "kind": "chip",
+      "refersTo": "pill-live",
+      "description": "Project status indicator; live/shipped/wrapped are the only three variants.",
+      "html": "<span class=\"ds-pill\">Live</span>",
+      "css": ".ds-pill { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.25rem 0.75rem; border-radius: 100px; border: 1px solid currentColor; color: #285F50; background: #C9DED7; } .ds-pill::before { content: '\\25CF'; font-size: 0.6em; }"
+    },
+    {
+      "name": "Spec Grid",
+      "kind": "custom",
+      "refersTo": "spec-grid-cell",
+      "description": "Signature bordered data-table component; the single vocabulary for both hero quick-facts and animated career-stat counters. Do not create a separate stat-card pattern.",
+      "html": "<div class=\"ds-spec-grid\"><div class=\"ds-spec-cell\"><span class=\"ds-spec-label\">Based in</span><span class=\"ds-spec-value\">Pune, India</span></div></div>",
+      "css": ".ds-spec-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid #D8D6CC; border-radius: 6px; overflow: hidden; background: #FBFBF9; } .ds-spec-cell { padding: 1.5rem; border-right: 1px solid #D8D6CC; } .ds-spec-label { display: block; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; color: #5A6578; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; } .ds-spec-value { font-weight: 600; font-size: 1.1875rem; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Generic content card (skills/capabilities grid).",
+      "html": "<div class=\"ds-card\"><h3>Product strategy</h3><p>PRDs, roadmaps, cross-functional execution.</p></div>",
+      "css": ".ds-card { background: #FBFBF9; border: 1px solid #D8D6CC; border-radius: 6px; padding: 2rem; transition: transform 380ms cubic-bezier(0.16,1,0.3,1), border-color 380ms; } .ds-card:hover { transform: translateY(-3px); border-color: #B7B4A6; } .ds-card h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; margin-bottom: 0.75rem; } .ds-card p { color: #4A5268; }"
+    },
+    {
+      "name": "Preview Card",
+      "kind": "card",
+      "refersTo": "preview-card",
+      "description": "Work-preview card linking to a case study anchor; only component with a resting-shadow-free / hover-shadow interaction.",
+      "html": "<a class=\"ds-preview-card\" href=\"#\"><div class=\"ds-preview-top\"><span class=\"ds-version\">v7.0</span><span class=\"ds-pill\">Live</span></div><div class=\"ds-preview-body\"><h3>ScoreVedaa</h3><p>Adaptive CAT-prep product.</p></div><div class=\"ds-preview-foot\">Read the case study →</div></a>",
+      "css": ".ds-preview-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid #D8D6CC; border-radius: 6px; overflow: hidden; background: #FBFBF9; transition: transform 380ms cubic-bezier(0.16,1,0.3,1), box-shadow 380ms; } .ds-preview-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -16px rgba(20,33,61,0.25); } .ds-preview-top { padding: 1.5rem; border-bottom: 1px solid #D8D6CC; display: flex; justify-content: space-between; } .ds-preview-body { padding: 1.5rem; flex: 1; } .ds-preview-foot { padding: 1rem 1.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.8125rem; color: #7A4D14; border-top: 1px solid #D8D6CC; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav__links",
+      "description": "Desktop primary nav with mono links, underline-wipe hover, and amber-deep active state.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Home</a><a href=\"#\">Work</a><a href=\"#\">About</a><a href=\"#\">Contact</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 2rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.875rem; } .ds-nav a { position: relative; text-decoration: none; color: #14213D; padding-block: 0.25rem; } .ds-nav a::after { content: ''; position: absolute; left: 0; right: 100%; bottom: -2px; height: 1.5px; background: #C98A2C; transition: right 380ms cubic-bezier(0.16,1,0.3,1); } .ds-nav a:hover::after, .ds-nav a:focus-visible::after, .ds-nav a[aria-current='page']::after { right: 0; } .ds-nav a[aria-current='page'] { color: #7A4D14; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Living Spec",
+    "overview": "The site treats a career as a versioned, statused product document rather than a portfolio brochure. Every page opens as if a file had been opened, not a landing page loaded: a metadata strip (FILE:, STATUS:, LAST UPDATED:) sits above the nav on every page, status pills (Live / Shipped / Wrapped) and version tags (v7.0, v6.0...) recur throughout, and numeric facts are laid out in a bordered mono spec-grid rather than as marketing stat cards. This direction was fixed by the project's own PRD (PRODUCT.md, Positioning section) before the build started — it is a brief-pinned world, not one arrived at through a concept-seed tournament, and the tokens/type/rejections below were set by that brief rather than discovered through exploration.\n\nThe palette is paper-and-ink: a warm off-white ground, near-navy ink for text, and two accent hues (amber, teal) reserved for status signaling — never for large fields of color or for direct body text. The system reads as restrained and document-like at rest, with warmth supplied by the fluid type scale, the 1.65 body line-height, and first-person case-study copy rather than by decoration.",
+    "keyCharacteristics": [
+      "Paper ground + ink type + hairline rules, styled like an opened document, not a marketing page.",
+      "IBM Plex Mono reserved for all metadata (labels, dates, tags, status text); Space Grotesk for headings; Inter for reading copy.",
+      "Amber and teal are structural/status accents only; a separate 'deep' variant of each exists specifically so they can appear as text.",
+      "Motion is additive only — every animated system (reveal, count-up, progress rail) ships a fully visible, fully functional zero-JS baseline first.",
+      "Exactly one numeric-data visual vocabulary (the bordered spec-grid) is reused for both the hero's quick-facts and the animated career stats."
+    ],
+    "rules": [
+      { "name": "The Deep-Variant-For-Text Rule", "body": "amber and teal are reserved for backgrounds, borders, dots, and gradient fills — never for direct text color on a light surface. Any time amber or teal family color needs to render as legible text, use amber-deep or teal-deep instead. This split exists because the base hues failed WCAG contrast on paper during finish review; reintroducing base-hue text would reintroduce that failure.", "section": "colors" },
+      { "name": "The Mono-Is-Metadata Rule", "body": "IBM Plex Mono is used exclusively for data/label/status content (dates, tags, labels, counters, nav links) — never for headings or reading prose. If a piece of text is 'information about the page' rather than 'the page's content,' it renders in mono.", "section": "typography" },
+      { "name": "The Flat-At-Rest Rule", "body": "Surfaces are flat and bordered at rest. A shadow may appear only as a hover-state response on an interactive card; it must never be a resting-state property of any surface.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do reserve IBM Plex Mono for metadata/labels/status content only (see The Mono-Is-Metadata Rule).",
+      "Do use amber-deep/teal-deep for any accent-family text on a light surface; use base amber/teal only for backgrounds, borders, dots, and the progress-rail gradient (The Deep-Variant-For-Text Rule).",
+      "Do route any new numeric/stat callout through the existing .spec-grid component rather than building a new stat-card pattern.",
+      "Do ship every motion-based feature (reveal-on-scroll, count-up, etc.) with a fully visible, fully functional CSS-only baseline that requires no JS, matching prefers-reduced-motion behavior already established for reveal, count-up, and magnetic hover.",
+      "Do preserve the triple-redundant trigger pattern (IntersectionObserver + manual scroll/resize bounding-rect check + ~2500ms hard timeout fallback) in any future reveal or count-up work; do not simplify it back to IO-only. This exists because a prior build of this exact site shipped content that stayed permanently invisible when IO never fired in a static-rendering context.",
+      "Do keep dashed borders limited to the two 'not-final/placeholder' signals (PAO-grid rule, visual-placeholder tile)."
+    ],
+    "donts": [
+      "Don't add a decorative eyebrow/kicker line above headings. An earlier version of the hero had one; it was removed site-wide during finish review as an unconditional anti-pattern. (A .hero__eyebrow style still exists in css/main.css but is unused by any page — it is dead CSS from that removal, not a component to reinstate or reference.)",
+      "Don't use base amber or teal as a direct text color on paper, paper-raised, or paper-sunken — it fails contrast; use the -deep variant.",
+      "Don't add a fourth status-pill variant without a real corresponding project status; the three (live/shipped/wrapped) map to actual case-study states, not decorative options.",
+      "Don't introduce a resting-state box-shadow on any card, button, or container; shadow is reserved for the one hover-interaction case on preview cards."
+    ]
+  }
+}

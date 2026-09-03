@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+(function(){
+  try{var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){}
+  try{
+    var introSeen = sessionStorage.getItem("introShown");
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if(!introSeen && !reduced){ document.documentElement.classList.add("show-intro"); }
+  }catch(e){}
+})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="view-transition" content="same-origin">
+<title>Divyansh Mehta — AI Product Manager</title>
+<meta name="description" content="Divyansh Mehta is an AI Product Manager building ScoreVedaa at NeuraMach.AI. Product strategy, design, and growth, specced like a document and shipped like a product.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Divyansh Mehta">
+<meta property="og:title" content="Divyansh Mehta — AI Product Manager">
+<meta property="og:description" content="Divyansh Mehta is an AI Product Manager building ScoreVedaa at NeuraMach.AI. Product strategy, design, and growth, specced like a document and shipped like a product.">
+<meta property="og:url" content="https://www.divyanshmehta.co.in/">
+<meta property="og:image" content="https://www.divyanshmehta.co.in/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Divyansh Mehta — AI Product Manager">
+<meta name="twitter:description" content="Divyansh Mehta is an AI Product Manager building ScoreVedaa at NeuraMach.AI. Product strategy, design, and growth, specced like a document and shipped like a product.">
+<meta name="twitter:image" content="https://www.divyanshmehta.co.in/assets/og-image.jpg">
+<link rel="canonical" href="https://www.divyanshmehta.co.in/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+</head>
+<body>
+<!--
+THESIS: A PM's portfolio should behave like the artifact he actually ships — a spec — not a brochure with a hero photo.
+OWN-WORLD: paper ground, ink type, IBM Plex Mono metadata strips (FILE/STATUS/LAST UPDATED), amber/teal status accents, hairline-ruled sections.
+STORY: a recruiter opens what reads like an internal doc, believes he thinks in structure, downloads the résumé or reaches out.
+FIRST VIEWPORT: meta strip -> H1 as spec headline -> sub -> two CTAs -> 4-col mono spec grid, all above the fold on desktop.
+FORM: The Living Spec — brief-pinned direction (PRODUCT.md Positioning), no tournament rolled; tokens, type, and rejections were fixed by the product brief itself. Build: code-led.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+NOTE: an eyebrow/kicker line was built here and removed site-wide after craft-floor review flagged it as an unconditional anti-pattern. Do not reintroduce it. See DESIGN.md.
+NOTE 2: intro overlay is Home-only, session-scoped (sessionStorage), and skipped entirely under prefers-reduced-motion — see the show-intro logic in <head> and js/main.js. It is a 3s muted clip, not a blocking loader: no-JS and reduced-motion visitors land straight on the real hero with zero flash either way.
+-->
+<div class="intro-overlay" data-intro-overlay>
+  <video class="intro-overlay__video" muted playsinline preload="none" aria-hidden="true"></video>
+  <div class="intro-overlay__scrim" aria-hidden="true"></div>
+  <div class="intro-overlay__meta mono" aria-hidden="true">
+    <span><span class="meta-strip__label">FILE:</span> home.md</span>
+    <span><span class="meta-strip__label">STATUS:</span> Loading spec…</span>
+  </div>
+  <button class="intro-overlay__skip mono" type="button" data-intro-skip>Skip ↓</button>
+</div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="progress-rail" aria-hidden="true"><div class="progress-rail__fill" data-progress-fill></div></div>
+
+<header class="site-header">
+  <div class="wrap meta-strip mono">
+    <span class="meta-strip__item"><span class="meta-strip__label">FILE:</span> home.md</span>
+    <span class="meta-strip__item"><span class="status-dot" aria-hidden="true"></span><span class="meta-strip__label">STATUS:</span> Open to opportunities</span>
+    <span class="meta-strip__item"><span class="meta-strip__label">LAST UPDATED:</span> Aug 2026</span>
+  </div>
+  <nav class="wrap nav" aria-label="Primary">
+    <a href="index.html" class="nav__mark"><span class="nav__mark-badge">DM</span> Divyansh Mehta</a>
+    <div class="nav__links">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="work.html">Work</a>
+      <a href="case-study.html">Case Study</a>
+      <a href="building.html">Building</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav__actions">
+      <a class="btn btn--ghost btn--sm nav__cta magnetic" href="Divyansh_Mehta_Resume.pdf">Résumé ↓</a>
+      <a class="btn btn--primary btn--sm nav__cta magnetic" href="contact.html">Get in touch</a>
+      <button class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Switch to dark theme">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"></path></svg>
+      </button>
+      <button class="hamburger" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav" data-mobile-nav>
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="work.html">Work</a>
+    <a href="case-study.html">Case Study</a>
+    <a href="building.html">Building</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <div class="mobile-nav__divider"></div>
+    <a href="Divyansh_Mehta_Resume.pdf">Résumé ↓</a>
+    <a href="contact.html">Get in touch →</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section hero">
+    <div class="wrap">
+      <h1 data-reveal>Builds AI products.<br>Writes the spec first.</h1>
+      <p class="hero__sub" data-reveal>I started in graphic design and marketing, then moved into product, so I think in systems and user experience at the same time, not one after the other. Today I'm the AI Product Manager behind ScoreVedaa at NeuraMach.AI, taking an adaptive CAT-prep product from diagnostic to launch. Before that: co-founded a media startup, ran growth for a founder's office, and shipped freelance product builds solo, discovery call to deployment. I treat all of it the same way: define the problem before the solution, then build.</p>
+      <div class="hero__actions" data-reveal>
+        <a class="btn btn--primary magnetic" href="work.html">View selected work</a>
+        <a class="btn btn--ghost magnetic" href="Divyansh_Mehta_Resume.pdf">Download résumé ↓</a>
+      </div>
+
+      <div class="spec-grid" data-reveal>
+        <div class="spec-grid__cell">
+          <span class="spec-grid__label mono">Currently</span>
+          <span class="spec-grid__value">AI Product Manager, NeuraMach.AI</span>
+        </div>
+        <div class="spec-grid__cell">
+          <span class="spec-grid__label mono">Owning</span>
+          <span class="spec-grid__value">ScoreVedaa (adaptive CAT prep)</span>
+        </div>
+        <div class="spec-grid__cell">
+          <span class="spec-grid__label mono">Background</span>
+          <span class="spec-grid__value">Design → Full-stack → Growth → Product</span>
+        </div>
+        <div class="spec-grid__cell">
+          <span class="spec-grid__label mono">Based in</span>
+          <span class="spec-grid__value">Pune, India</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sunken">
+    <div class="wrap">
+      <div class="spec-grid" data-reveal data-reveal-group>
+        <div class="spec-grid__cell">
+          <span class="spec-grid__label mono">Creators following the builder journey</span>
+          <span class="spec-grid__value spec-grid__value--counted"><span data-count-to="4" data-count-suffix="K+">0</span></span>
+        </div>
+        <div class="spec-grid__cell">
+          <span class="spec-grid__label mono">AI products in active development</span>
+          <span class="spec-grid__value spec-grid__value--counted"><span data-count-to="2">0</span></span>
+        </div>
+        <div class="spec-grid__cell">
+          <span class="spec-grid__label mono">Startups run through Startup Mela</span>
+          <span class="spec-grid__value spec-grid__value--counted"><span data-count-to="65" data-count-suffix="+">0</span></span>
+        </div>
+        <div class="spec-grid__cell">
+          <span class="spec-grid__label mono">Engagement lift from a campaign redesign</span>
+          <span class="spec-grid__value spec-grid__value--counted"><span data-count-to="40" data-count-suffix="%">0</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-reveal>A T-shaped builder, not just a strategist.</h2>
+        <p data-reveal>Most PM portfolios show the thinking. Fewer can show they've also shipped the design and the growth motion around it. I've owned all three, on the same products.</p>
+      </div>
+      <div class="card-grid" data-reveal data-reveal-group>
+        <div class="card">
+          <h3>Product strategy</h3>
+          <p>PRDs, RICE-style prioritization, roadmaps, responsible-AI and data-consent frameworks, cross-functional execution from ambiguity to ship.</p>
+        </div>
+        <div class="card">
+          <h3>Design &amp; build</h3>
+          <p>End-to-end UX and full-stack development. I've shipped production sites solo, discovery call to deployment, using AI-assisted dev where it earns its keep.</p>
+        </div>
+        <div class="card">
+          <h3>Growth &amp; GTM</h3>
+          <p>Pitch decks, positioning, SEO, Google Ads, and paid social: the founder's-office skillset that gets a product in front of the people it's for.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--raised">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-reveal>Four of eight, specced like products.</h2>
+        <p data-reveal>Every entry follows the same structure: problem, approach, outcome. The full set (including campus leadership and freelance builds) is on the Work page.</p>
+      </div>
+      <div class="preview-grid" data-reveal data-reveal-group>
+        <a class="preview-card" href="case-study.html#approval-os">
+          <div class="preview-card__top">
+            <span class="version-tag">v9.0</span>
+            <span class="pill pill--building">Building</span>
+          </div>
+          <div class="preview-card__body">
+            <h3>Approval OS</h3>
+            <p>Client content-approval platform, owned solo end-to-end: PRD, 39-section technical spec, and a 57-frame design system, engineering underway.</p>
+          </div>
+          <div class="preview-card__foot">Read the case study <span class="arrow" aria-hidden="true">→</span></div>
+        </a>
+        <a class="preview-card" href="case-study.html#scorevedaa">
+          <div class="preview-card__top">
+            <span class="version-tag">v8.0</span>
+            <span class="pill pill--live">Live</span>
+          </div>
+          <div class="preview-card__body">
+            <h3>ScoreVedaa</h3>
+            <p>Adaptive CAT-prep product, owned end-to-end at NeuraMach.AI, from diagnostics to recommendation logic to responsible-AI framework.</p>
+          </div>
+          <div class="preview-card__foot">Read the case study <span class="arrow" aria-hidden="true">→</span></div>
+        </a>
+        <a class="preview-card" href="work.html#point-of">
+          <div class="preview-card__top">
+            <span class="version-tag">v6.0</span>
+            <span class="pill pill--wrapped">Wrapped</span>
+          </div>
+          <div class="preview-card__body">
+            <h3>Point Of</h3>
+            <p>Founder's Associate role: pitch decks, campaign strategy, and website UX audits feeding product and content decisions.</p>
+          </div>
+          <div class="preview-card__foot">Read the case study <span class="arrow" aria-hidden="true">→</span></div>
+        </a>
+        <a class="preview-card" href="work.html#freelance">
+          <div class="preview-card__top">
+            <span class="version-tag">v3.0</span>
+            <span class="pill pill--shipped">Shipped</span>
+          </div>
+          <div class="preview-card__body">
+            <h3>Freelance builds</h3>
+            <p>Three clients, discovery-to-deployment, solo-owned, from lightweight PRD to full-stack build to paid-social workstream.</p>
+          </div>
+          <div class="preview-card__foot">Read the case study <span class="arrow" aria-hidden="true">→</span></div>
+        </a>
+      </div>
+      <div class="mt-8 text-center" data-reveal>
+        <a class="btn btn--ghost magnetic" href="work.html">See all 8 case studies →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--last">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom: 0;">
+        <h2 data-reveal>Not just client and employer work.</h2>
+        <p data-reveal>I'm also building products I own end to end: built, priced, and shipped under my own name. One is actively in build (Approval OS), one is still a reserved slot, honestly marked, no fake filler.</p>
+      </div>
+      <div class="hero__actions mt-8" data-reveal>
+        <a class="btn btn--primary magnetic" href="building.html">See what I'm building →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__row">
+    <span>© 2026 Divyansh Mehta</span>
+    <div class="site-footer__links">
+      <a href="https://www.linkedin.com/in/divyansh-mehta-2153182a4" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:divyanshmehta21@gmail.com">Email</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

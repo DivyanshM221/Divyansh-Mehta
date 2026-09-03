@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+(function(){try{var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="view-transition" content="same-origin">
+<title>Divyansh Mehta — Building</title>
+<meta name="description" content="Products Divyansh Mehta owns end to end: built, priced, and shipped by him, not for a client or an employer.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Divyansh Mehta">
+<meta property="og:title" content="Divyansh Mehta — Building">
+<meta property="og:description" content="Products Divyansh Mehta owns end to end: built, priced, and shipped by him, not for a client or an employer.">
+<meta property="og:url" content="https://www.divyanshmehta.co.in/building.html">
+<meta property="og:image" content="https://www.divyanshmehta.co.in/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Divyansh Mehta — Building">
+<meta name="twitter:description" content="Products Divyansh Mehta owns end to end: built, priced, and shipped by him, not for a client or an employer.">
+<meta name="twitter:image" content="https://www.divyanshmehta.co.in/assets/og-image.jpg">
+<link rel="canonical" href="https://www.divyanshmehta.co.in/building.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+</head>
+<body>
+<!--
+THESIS: A PM's portfolio should behave like the artifact he actually ships — a spec — not a brochure with a hero photo.
+OWN-WORLD: paper ground, ink type, IBM Plex Mono metadata strips (FILE/STATUS/LAST UPDATED), amber/teal status accents, hairline-ruled sections.
+STORY: a founder or operator (the site's secondary audience) checks whether he builds his own things, not just client/employer work, and sees a page that's honestly reserved rather than padded with fake products.
+FIRST VIEWPORT: meta strip -> H1 -> sub -> reserved product slots, all above the fold on desktop.
+FORM: The Living Spec — brief-pinned direction (PRODUCT.md Positioning), no tournament rolled; tokens, type, and rejections were fixed by the product brief itself. Build: code-led.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+NOTE: split out of the Home page into its own page on the user's request, mirroring the "Work / Case study / Building" split from his own prior design draft. Home keeps no teaser card for this any more — the nav link is the way in.
+-->
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="progress-rail" aria-hidden="true"><div class="progress-rail__fill" data-progress-fill></div></div>
+
+<header class="site-header">
+  <div class="wrap meta-strip mono">
+    <span class="meta-strip__item"><span class="meta-strip__label">FILE:</span> building.md</span>
+    <span class="meta-strip__item"><span class="meta-strip__label">STATUS:</span> 1 building, 1 reserved</span>
+    <span class="meta-strip__item"><span class="meta-strip__label">LAST UPDATED:</span> Aug 2026</span>
+  </div>
+  <nav class="wrap nav" aria-label="Primary">
+    <a href="index.html" class="nav__mark"><span class="nav__mark-badge">DM</span> Divyansh Mehta</a>
+    <div class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="case-study.html">Case Study</a>
+      <a href="building.html" aria-current="page">Building</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav__actions">
+      <a class="btn btn--ghost btn--sm nav__cta magnetic" href="Divyansh_Mehta_Resume.pdf">Résumé ↓</a>
+      <a class="btn btn--primary btn--sm nav__cta magnetic" href="contact.html">Get in touch</a>
+      <button class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Switch to dark theme">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"></path></svg>
+      </button>
+      <button class="hamburger" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav" data-mobile-nav>
+    <a href="index.html">Home</a>
+    <a href="work.html">Work</a>
+    <a href="case-study.html">Case Study</a>
+    <a href="building.html" aria-current="page">Building</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <div class="mobile-nav__divider"></div>
+    <a href="Divyansh_Mehta_Resume.pdf">Résumé ↓</a>
+    <a href="contact.html">Get in touch →</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section section--last">
+    <div class="wrap">
+      <h1 data-reveal>Things I'm building.</h1>
+      <p class="hero__sub" data-reveal>Everything else on this site is work I did for a client or an employer. This page is the opposite: products I own end to end, built, priced, and shipped under my own name. Nothing here is fake filler to look busy — one is actively in build, the other is a reserved slot, honestly marked, ready to fill in when it's real.</p>
+
+      <div class="building-grid mt-8" data-reveal>
+        <a class="building-card" href="case-study.html#approval-os">
+          <img class="building-card__visual" src="assets/case-studies/approvalos-client-preview.webp" alt="Approval OS client preview screen: a guest reviewer viewing a versioned Instagram post with Request changes and Approve actions" width="1400" height="996" loading="lazy">
+          <div class="building-card__body">
+            <span class="tag">Building</span>
+            <h2>Approval OS</h2>
+            <p>A client content-approval platform for social agencies, where approval binds to an exact, immutable creative + caption version. PRD, 39-section technical spec, and a 57-frame design system done; engineering underway.</p>
+            <span class="mono building-card__meta">Launch — TBD</span>
+          </div>
+        </a>
+        <div class="building-card">
+          <div class="visual-placeholder building-card__visual">
+            <p class="visual-placeholder__label">Product screenshot — pending</p>
+          </div>
+          <div class="building-card__body">
+            <span class="tag">Concept</span>
+            <h2>Reserved slot</h2>
+            <p>A second bet, kept outcome-first: what changes for the person using it on day one. Not yet real.</p>
+            <span class="mono building-card__meta">Launch — TBD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__actions mt-8" data-reveal>
+        <a class="btn btn--primary magnetic" href="contact.html">Want to hear when one ships?</a>
+        <a class="btn btn--ghost magnetic" href="work.html">See the work instead →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__row">
+    <span>© 2026 Divyansh Mehta</span>
+    <div class="site-footer__links">
+      <a href="https://www.linkedin.com/in/divyansh-mehta-2153182a4" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:divyanshmehta21@gmail.com">Email</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

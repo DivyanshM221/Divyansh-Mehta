@@ -1,0 +1,159 @@
+/* ============================================================
+   THE LIVING SPEC — design tokens
+   Career-as-product-document. Every value here should read like
+   something you'd find in a style guide someone actually shipped,
+   not a mood board.
+   ============================================================ */
+
+:root {
+  /* --- surfaces --- */
+  --paper: #F5F5F1;
+  --paper-raised: #FBFBF9;
+  --paper-sunken: #ECEBE4;
+
+  /* --- ink --- */
+  --ink: #14213D;
+  --ink-soft: #4A5268;
+  --ink-faint: #5A6578;
+
+  /* --- structure --- */
+  --line: #D8D6CC;
+  --line-strong: #B7B4A6;
+
+  /* --- accents --- */
+  --amber: #C98A2C;
+  --amber-soft: #E8D5B0;
+  --amber-deep: #7A4D14; /* text-safe amber — 6.6:1 on paper, 5:1 on amber-soft */
+  --teal: #2F6F5E;
+  --teal-soft: #C9DED7;
+  --teal-deep: #285F50; /* text-safe teal — 6.8:1 on paper, 5.2:1 on teal-soft */
+
+  /* --- semantic aliases --- */
+  --status-live: var(--teal);
+  --status-shipped: var(--amber);
+  --status-wrapped: var(--ink-faint);
+  --link: var(--amber);
+  --focus-ring: var(--ink);
+  --ink-hover: #223059;
+  --amber-hover: #DD9A34;
+
+  /* fixed text-safe color for text sitting on an amber-tone fill;
+     does not invert with theme, since amber itself doesn't either */
+  --ink-on-amber: #14213D;
+
+  /* rgb triplet (not hex) so it can feed rgba() shadow values */
+  --shadow-color: 20, 33, 61;
+
+  /* --- type --- */
+  --font-display: "Space Grotesk", "Arial Narrow", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+  /* --- type scale (fluid) --- */
+  --fs-h1: clamp(2.25rem, 1.6rem + 3vw, 3.75rem);
+  --fs-h2: clamp(1.625rem, 1.4rem + 1vw, 2.125rem);
+  --fs-h3: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --fs-body-lg: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-mono: clamp(0.6875rem, 0.66rem + 0.1vw, 0.8125rem);
+
+  --lh-body: 1.65;
+  --lh-tight: 1.2;
+
+  /* --- spacing scale --- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4.5rem;
+  --sp-9: 6.5rem;
+  --sp-10: 9rem;
+
+  /* --- layout --- */
+  --content-max: 76rem;
+  --measure: 42rem;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+
+  /* --- motion --- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 160ms;
+  --dur-base: 380ms;
+  --dur-slow: 700ms;
+
+  color-scheme: light;
+}
+
+/* ============================================================
+   Dark theme — same paper/ink relationship, inverted.
+   Applied two ways: system preference when no explicit choice
+   has been made (:root:not([data-theme="light"])), and an
+   explicit override once the visitor picks a theme
+   (:root[data-theme="dark"]) via the toggle in js/main.js.
+   Amber/teal stay the same base hue in both themes; only their
+   "soft"/"deep" text-safe companions are recomputed for
+   dark-surface contrast.
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #14161C;
+    --paper-raised: #1C1F28;
+    --paper-sunken: #0E1013;
+
+    --ink: #E9EAEF;
+    --ink-soft: #ABB1C4;
+    --ink-faint: #8890A0;
+
+    --line: #2B2F3B;
+    --line-strong: #3F4453;
+
+    --amber-soft: #3A2B14;
+    --amber-deep: #E8A945;
+    --teal-soft: #15332B;
+    --teal-deep: #6FCBB0;
+
+    --ink-hover: #FDF9F2;
+    --amber-hover: #DD9A34;
+
+    --shadow-color: 0, 0, 0;
+
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #14161C;
+  --paper-raised: #1C1F28;
+  --paper-sunken: #0E1013;
+
+  --ink: #E9EAEF;
+  --ink-soft: #ABB1C4;
+  --ink-faint: #8890A0;
+
+  --line: #2B2F3B;
+  --line-strong: #3F4453;
+
+  --amber-soft: #3A2B14;
+  --amber-deep: #E8A945;
+  --teal-soft: #15332B;
+  --teal-deep: #6FCBB0;
+
+  --ink-hover: #FDF9F2;
+  --amber-hover: #DD9A34;
+
+  --shadow-color: 0, 0, 0;
+
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+  }
+}

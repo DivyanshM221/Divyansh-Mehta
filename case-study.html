@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+(function(){try{var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="view-transition" content="same-origin">
+<title>Divyansh Mehta — Case Study</title>
+<meta name="description" content="A deep dive on ScoreVedaa: the problem, the approach, the artifacts, and the honest state of a beta — one AI product taken all the way down to the decisions behind it.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Divyansh Mehta">
+<meta property="og:title" content="Divyansh Mehta — Case Study">
+<meta property="og:description" content="A deep dive on ScoreVedaa: the problem, the approach, the artifacts, and the honest state of a beta — one AI product taken all the way down to the decisions behind it.">
+<meta property="og:url" content="https://www.divyanshmehta.co.in/case-study.html">
+<meta property="og:image" content="https://www.divyanshmehta.co.in/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Divyansh Mehta — Case Study">
+<meta name="twitter:description" content="A deep dive on ScoreVedaa: the problem, the approach, the artifacts, and the honest state of a beta — one AI product taken all the way down to the decisions behind it.">
+<meta name="twitter:image" content="https://www.divyanshmehta.co.in/assets/og-image.jpg">
+<link rel="canonical" href="https://www.divyanshmehta.co.in/case-study.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+</head>
+<body>
+<!--
+THESIS: A PM's portfolio should behave like the artifact he actually ships — a spec — not a brochure with a hero photo.
+OWN-WORLD: paper ground, ink type, IBM Plex Mono metadata strips (FILE/STATUS/LAST UPDATED), amber/teal status accents, hairline-ruled sections.
+STORY: a recruiter who wants proof beyond a summary card gets full depth on the entries that earn it: real problem framing, real trade-offs, real artifacts (once supplied), and an honest unfinished state where one exists.
+FIRST VIEWPORT: meta strip -> H1 -> sub -> pinned product visual beside full PAO detail (desktop), stacked on mobile.
+FORM: The Living Spec — brief-pinned direction (PRODUCT.md Positioning), no tournament rolled; tokens, type, and rejections were fixed by the product brief itself. Build: code-led.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+NOTE: split out of work.html into its own page on the user's request, mirroring the "Work / Case study / Building" split from his own prior design draft. Work keeps a lighter summary card per case; this page is where the deep dive lives, one per entry, and is built to hold more than one over time.
+-->
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="progress-rail" aria-hidden="true"><div class="progress-rail__fill" data-progress-fill></div></div>
+
+<header class="site-header">
+  <div class="wrap meta-strip mono">
+    <span class="meta-strip__item"><span class="meta-strip__label">FILE:</span> case-study.md</span>
+    <span class="meta-strip__item"><span class="meta-strip__label">ENTRIES:</span> 4 deep dives</span>
+    <span class="meta-strip__item"><span class="meta-strip__label">DEPTH:</span> Full detail</span>
+  </div>
+  <nav class="wrap nav" aria-label="Primary">
+    <a href="index.html" class="nav__mark"><span class="nav__mark-badge">DM</span> Divyansh Mehta</a>
+    <div class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="case-study.html" aria-current="page">Case Study</a>
+      <a href="building.html">Building</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav__actions">
+      <a class="btn btn--ghost btn--sm nav__cta magnetic" href="Divyansh_Mehta_Resume.pdf">Résumé ↓</a>
+      <a class="btn btn--primary btn--sm nav__cta magnetic" href="contact.html">Get in touch</a>
+      <button class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Switch to dark theme">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"></path></svg>
+      </button>
+      <button class="hamburger" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav" data-mobile-nav>
+    <a href="index.html">Home</a>
+    <a href="work.html">Work</a>
+    <a href="case-study.html" aria-current="page">Case Study</a>
+    <a href="building.html">Building</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <div class="mobile-nav__divider"></div>
+    <a href="Divyansh_Mehta_Resume.pdf">Résumé ↓</a>
+    <a href="contact.html">Get in touch →</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section section--tight">
+    <div class="wrap">
+      <h1 data-reveal>One product,<br>taken all the way down.</h1>
+      <p class="hero__sub" data-reveal>The Work page gives every entry the same short structure on purpose: problem, approach, outcome, and nothing more. This page is the opposite move: full depth on the entries worth writing at length, with the real trade-offs and (once they exist) the real artifacts behind each one. Four so far, and it grows as more are worth writing.</p>
+    </div>
+  </section>
+
+  <!-- ================= Case Study 01 — ScoreVedaa ================= -->
+  <article class="case case--flagship" id="scorevedaa" aria-labelledby="scorevedaa-title">
+    <div class="wrap">
+      <div class="case__layout">
+
+        <div class="case__visual-col" data-reveal>
+          <img class="case-visual-image" src="assets/case-studies/scorevedaa-hero.webp" alt="ScoreVedaa product landing page: an AI-powered CAT exam preparation and strategy platform with a predicted-percentile tracker and adaptive practice recommendations" width="1200" height="574" loading="eager" fetchpriority="high">
+          <p class="case-visual-caption">ScoreVedaa · product landing page</p>
+        </div>
+
+        <div class="case__text-col">
+          <div class="case__head" data-reveal>
+            <span class="version-tag">Deep dive 01</span>
+            <span class="pill pill--live">Live</span>
+          </div>
+          <h2 class="case__title" id="scorevedaa-title" data-reveal>ScoreVedaa</h2>
+          <p class="case__meta mono" data-reveal><span>NeuraMach.AI</span><span>AI Product Manager</span><span>Mar 2026 – Present</span></p>
+          <p class="case-visual-caption" data-reveal style="margin-bottom: var(--sp-6);">One of two AI products I'm actively building inside NeuraMach.AI's studio.</p>
+
+          <div class="pao-grid" data-reveal data-reveal-group>
+            <div class="pao-grid__item">
+              <p class="pao-grid__label pao-grid__label--problem mono">Problem</p>
+              <p>CAT exam prep is generic: every student gets the same mock test and the same syllabus order, and institutes see the aggregate score, not why a student is actually stuck, so guidance defaults to "practice more."</p>
+            </div>
+            <div class="pao-grid__item">
+              <p class="pao-grid__label pao-grid__label--approach mono">Approach</p>
+              <p>Own the product end-to-end: diagnostic assessments, personalized action plans, adaptive practice journeys, and the recommendation logic behind them. Write the PRDs that turn student and coaching-institute pain points into scoring logic and success metrics, set a responsible-AI and data-consent framework for personalized learning, and run B2C and B2B tracks in parallel: one for students, one for institutes who need better insight, not a competing product.</p>
+            </div>
+            <div class="pao-grid__item">
+              <p class="pao-grid__label pao-grid__label--outcome mono">Outcome</p>
+              <p>In beta-launch planning and iteration, with the feedback loop already running back into the roadmap. No inflated numbers here: that's the honest state of a beta.</p>
+            </div>
+          </div>
+
+          <div class="case__tags" data-reveal>
+            <span class="tag">Product Strategy</span>
+            <span class="tag">PRDs</span>
+            <span class="tag">Adaptive Learning</span>
+            <span class="tag">Responsible AI</span>
+            <span class="tag">Data Consent</span>
+            <span class="tag">B2C/B2B Strategy</span>
+          </div>
+          <div class="case__links" data-reveal>
+            <a href="https://www.scorevedaa.in" target="_blank" rel="noopener">scorevedaa.in ↗</a>
+          </div>
+
+          <span class="artifacts-label">Artifacts</span>
+          <div class="artifacts-grid" data-reveal>
+            <img class="artifact-image artifact-image--slide" src="assets/case-studies/scorevedaa-direction-gap.webp" alt="ScoreVedaa PRD slide: 'Direction Gap' — students today prepare across disconnected books, YouTube, coaching portals, and mock platforms with no connected system for the next step" width="1400" height="788" loading="lazy">
+            <img class="artifact-image artifact-image--slide" src="assets/case-studies/scorevedaa-preparation-loop.webp" alt="ScoreVedaa PRD slide: 'The Connected Preparation Loop' — a seven-step cycle of goal-setting, diagnosis, learning, practice, simulation, analysis, and next action, backed by continuously updated learner intelligence" width="1400" height="788" loading="lazy">
+            <img class="artifact-image artifact-image--slide" src="assets/case-studies/scorevedaa-competitive-landscape.webp" alt="ScoreVedaa PRD slide: 'Existing Solutions Solve Parts' — comparing fragmented point solutions (coaching, content apps, mock platforms, doubt solvers, generic AI) against ScoreVedaa's connected preparation intelligence" width="1400" height="788" loading="lazy">
+            <img class="artifact-image artifact-image--slide" src="assets/case-studies/scorevedaa-ecosystem-architecture.webp" alt="ScoreVedaa PRD slide: 'Ecosystem Architecture' — one AI core powering five pillars (Strategy, Learning, Practice and Testing, Performance Intelligence, Experiences) through unified data, intelligence, and improvement" width="1400" height="788" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- ================= Case Study 02 — Startup Mela ================= -->
+  <article class="case" id="startup-mela" aria-labelledby="startup-mela-title">
+    <div class="wrap">
+      <div class="case__head" data-reveal>
+        <span class="version-tag">Deep dive 02</span>
+        <span class="pill pill--wrapped">Wrapped</span>
+      </div>
+      <h2 class="case__title" id="startup-mela-title" data-reveal>Startup Mela</h2>
+      <p class="case__meta mono" data-reveal><span>General Secretary, E-Cell</span><span>St. Joseph's University</span><span>Apr 2024 – Feb 2025</span></p>
+
+      <div class="pao-grid" data-reveal data-reveal-group>
+        <div class="pao-grid__item">
+          <p class="pao-grid__label pao-grid__label--problem mono">Problem</p>
+          <p>St. Joseph's University's flagship startup ecosystem event needed the same coordination rigor as a product launch: dozens of independent stakeholders, one fixed date, and zero room to slip. Startups, VC firms, and student participants each had different needs and timelines, and none of them reported to each other.</p>
+        </div>
+        <div class="pao-grid__item">
+          <p class="pao-grid__label pao-grid__label--approach mono">Approach</p>
+          <p>Owned the full production lifecycle rather than a single workstream, from early planning through day-of execution. Coordinated across three distinct stakeholder groups, closer to multi-sided-marketplace coordination than a typical single-track event, and sequenced decisions correctly: venue, dates, and VC commitments locked early; content and session details left flexible until later.</p>
+        </div>
+        <div class="pao-grid__item">
+          <p class="pao-grid__label pao-grid__label--outcome mono">Outcome</p>
+          <p>Delivered the full multi-stakeholder rollout on schedule: 65+ startups, 25+ VC firms, and 1,000+ participants, on time. A real-world stress test of program management at a scale most early-career candidates never touch.</p>
+        </div>
+      </div>
+
+      <div class="case__tags" data-reveal>
+        <span class="tag">Program Ownership</span>
+        <span class="tag">Multi-Stakeholder Coordination</span>
+        <span class="tag">Deadline-Driven Execution</span>
+        <span class="tag">Partnerships</span>
+      </div>
+
+      <span class="artifacts-label">Press coverage</span>
+      <figure class="press-clipping" data-reveal>
+        <a class="press-clipping__link" href="https://konkancatholic.com/startup-mela-at-st-josephs-university-bengaluru/" target="_blank" rel="noopener">
+          <img class="press-clipping__img" src="assets/case-studies/startup-mela-press.webp" alt="konkancatholic.com coverage of Startup Mela, naming Divyansh Mehta as the student organizer who led the event and his team" width="1280" height="1858" loading="lazy">
+        </a>
+        <figcaption class="case-visual-caption">konkancatholic.com · read the article ↗</figcaption>
+      </figure>
+
+      <span class="artifacts-label">Artifacts</span>
+      <div class="artifacts-grid artifacts-grid--photos" data-reveal>
+        <img class="artifact-image" src="assets/case-studies/startup-mela-02.webp" alt="An attendee speaking with a startup representative at an exhibitor booth during Startup Mela" width="1200" height="797" loading="lazy">
+        <img class="artifact-image" src="assets/case-studies/startup-mela-03.webp" alt="The St. Joseph's University E-Cell organizing team on stage at Startup Mela" width="1200" height="797" loading="lazy">
+        <img class="artifact-image" src="assets/case-studies/startup-mela-04.webp" alt="The St. Joseph's University E-Cell organizing team at Startup Mela, second group photo" width="1200" height="797" loading="lazy">
+      </div>
+    </div>
+  </article>
+
+  <!-- ================= Case Study 03 — VitaMind ================= -->
+  <article class="case" id="vitamind" aria-labelledby="vitamind-title">
+    <div class="wrap">
+      <div class="case__head" data-reveal>
+        <span class="version-tag">Deep dive 03</span>
+        <span class="pill pill--shipped">Shipped</span>
+      </div>
+      <h2 class="case__title" id="vitamind-title" data-reveal>VitaMind</h2>
+      <p class="case__meta mono" data-reveal><span>UX Design &amp; Full-Stack Build</span><span>Freelance</span><span>Aug 2026</span></p>
+
+      <div class="pao-grid" data-reveal data-reveal-group>
+        <div class="pao-grid__item">
+          <p class="pao-grid__label pao-grid__label--problem mono">Problem</p>
+          <p>VitaMind is psychologist Sanaya Mehta's practice in Mukundnagar, Pune: evidence-based psychotherapy, cognitive assessments, CST (Cognitive Stimulation Therapy), memory training, and positive-ageing programs. A solo practitioner in mental healthcare needs a site that reads as clinically credible and calm, not a generic small-business template, since trust is the entire conversion mechanism for someone choosing a therapist.</p>
+        </div>
+        <div class="pao-grid__item">
+          <p class="pao-grid__label pao-grid__label--approach mono">Approach</p>
+          <p>Ran discovery into the specific services and tone the practice needed, then owned UX and full-stack build solo, using AI-assisted development (Claude) to compress the build timeline well below the traditional Spectrum build that came before it.</p>
+        </div>
+        <div class="pao-grid__item">
+          <p class="pao-grid__label pao-grid__label--outcome mono">Outcome</p>
+          <p>Live at vitaminds.in: a site whose calm, credible framing matches what the practice actually offers, not a generic template papered over a mental-health service.</p>
+        </div>
+      </div>
+
+      <div class="case__tags" data-reveal>
+        <span class="tag">UX Design</span>
+        <span class="tag">Full-Stack Build</span>
+        <span class="tag">AI-Assisted Dev</span>
+        <span class="tag">Client Work</span>
+      </div>
+      <div class="case__links" data-reveal>
+        <a href="https://vitaminds.in" target="_blank" rel="noopener">vitaminds.in ↗</a>
+      </div>
+
+      <span class="artifacts-label">Artifacts</span>
+      <div class="artifacts-grid" data-reveal style="grid-template-columns: minmax(0, 320px);">
+        <img class="artifact-image" src="assets/case-studies/vitamind-homepage.webp" alt="VitaMind homepage: 'Where clarity meets compassion,' a calm, editorial landing page for Sanaya Mehta's psychology practice" width="1200" height="654" loading="lazy">
+      </div>
+    </div>
+  </article>
+
+  <!-- ================= Case Study 04 — Approval OS ================= -->
+  <article class="case section--last" id="approval-os" aria-labelledby="approval-os-title">
+    <div class="wrap">
+      <div class="case__head" data-reveal>
+        <span class="version-tag">Deep dive 04</span>
+        <span class="pill pill--building">Building</span>
+      </div>
+      <h2 class="case__title" id="approval-os-title" data-reveal>Approval OS</h2>
+      <p class="case__meta mono" data-reveal><span>Personal Product</span><span>Founder / Product &amp; Systems Design</span><span>Aug 2026 – Present</span></p>
+
+      <div class="pao-grid" data-reveal data-reveal-group>
+        <div class="pao-grid__item">
+          <p class="pao-grid__label pao-grid__label--problem mono">Problem</p>
+          <p>Social media agencies send creative and captions to clients for approval over WhatsApp and email threads — which makes "what exactly did the client approve" a real liability question, not a rhetorical one. A verbal or checkbox approval breaks the moment a caption gets edited after the fact. Clients also won't create an account just to review a post.</p>
+        </div>
+        <div class="pao-grid__item">
+          <p class="pao-grid__label pao-grid__label--approach mono">Approach</p>
+          <p>Wrote the product PRD, then a 39-section Technical Requirements Doc translating it into a concrete engineering baseline — stack, data model, security, and a core invariant: <em>approval is never a mutable boolean.</em> Every decision binds to an exact, immutable creative + caption version; editing either after approval doesn't quietly update the record, it invalidates it and requires re-approval. Paired this with a full Design System v2.0 (57 Figma frames across agency desktop, mobile client review, and onboarding) and a 10-day engineering alpha plan sequencing auth → content batching → guest review links → versioning/invalidation → annotations → hardening.</p>
+        </div>
+        <div class="pao-grid__item">
+          <p class="pao-grid__label pao-grid__label--outcome mono">Outcome</p>
+          <p>Engineering handover baseline complete: PRD, 39-section TRD, and 57-frame design system, ready for build. Guest reviewers need no account — a capability-scoped link is the entire client-side surface. Currently in active development against the 10-day alpha plan.</p>
+        </div>
+      </div>
+
+      <div class="case__tags" data-reveal>
+        <span class="tag">Product Strategy</span>
+        <span class="tag">Technical Spec Writing</span>
+        <span class="tag">System Design</span>
+        <span class="tag">Design Systems</span>
+        <span class="tag">Data Integrity / Versioning</span>
+      </div>
+
+      <span class="artifacts-label">Artifacts</span>
+      <div class="artifacts-grid" data-reveal>
+        <img class="artifact-image artifact-image--slide" src="assets/case-studies/approvalos-sign-in.webp" alt="Approval OS sign-in screen from the Design System v2.0: split-screen layout with agency sign-in on the right and product messaging ('Client approvals, finally organized') on the left" width="1400" height="996" loading="lazy">
+        <img class="artifact-image artifact-image--slide" src="assets/case-studies/approvalos-client-preview.webp" alt="Approval OS client preview screen from the Design System v2.0: a guest reviewer viewing a versioned Instagram post with Request changes and Approve actions, preview mode banner disabling decisions" width="1400" height="996" loading="lazy">
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__row">
+    <span>© 2026 Divyansh Mehta</span>
+    <div class="site-footer__links">
+      <a href="https://www.linkedin.com/in/divyansh-mehta-2153182a4" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:divyanshmehta21@gmail.com">Email</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
