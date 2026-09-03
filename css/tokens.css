@@ -91,40 +91,15 @@
 
 /* ============================================================
    Dark theme — same paper/ink relationship, inverted.
-   Applied two ways: system preference when no explicit choice
-   has been made (:root:not([data-theme="light"])), and an
-   explicit override once the visitor picks a theme
-   (:root[data-theme="dark"]) via the toggle in js/main.js.
+   Light is always the default regardless of system preference;
+   dark only applies once the visitor explicitly picks it via the
+   toggle in js/main.js (:root[data-theme="dark"]), which is also
+   what the inline bootstrap script in <head> defaults new
+   visitors away from — it never reads prefers-color-scheme.
    Amber/teal stay the same base hue in both themes; only their
    "soft"/"deep" text-safe companions are recomputed for
    dark-surface contrast.
    ============================================================ */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #14161C;
-    --paper-raised: #1C1F28;
-    --paper-sunken: #0E1013;
-
-    --ink: #E9EAEF;
-    --ink-soft: #ABB1C4;
-    --ink-faint: #8890A0;
-
-    --line: #2B2F3B;
-    --line-strong: #3F4453;
-
-    --amber-soft: #3A2B14;
-    --amber-deep: #E8A945;
-    --teal-soft: #15332B;
-    --teal-deep: #6FCBB0;
-
-    --ink-hover: #FDF9F2;
-    --amber-hover: #DD9A34;
-
-    --shadow-color: 0, 0, 0;
-
-    color-scheme: dark;
-  }
-}
 :root[data-theme="dark"] {
   --paper: #14161C;
   --paper-raised: #1C1F28;

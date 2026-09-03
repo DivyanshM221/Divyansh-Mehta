@@ -257,10 +257,6 @@ html.theme-transitioning *::after {
 .theme-toggle:hover { border-color: var(--ink); background: var(--paper-raised); }
 .theme-toggle svg { width: 16px; height: 16px; stroke: var(--ink); }
 .theme-toggle__icon--moon { display: none; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .theme-toggle__icon--sun { display: none; }
-  :root:not([data-theme="light"]) .theme-toggle__icon--moon { display: block; }
-}
 :root[data-theme="dark"] .theme-toggle__icon--sun { display: none; }
 :root[data-theme="dark"] .theme-toggle__icon--moon { display: block; }
 :root[data-theme="light"] .theme-toggle__icon--sun { display: block; }
